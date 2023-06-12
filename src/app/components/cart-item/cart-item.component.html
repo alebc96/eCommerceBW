@@ -1,0 +1,23 @@
+<div class="row w-100 p-3" *ngIf="item !== undefined" >
+    <div class="col">
+        <img src={{item.image}} alt="item cart" height="100px" width="100px">
+    </div>
+    <div class="col d-flex align-items-center justify-content-center">
+        <p class="text-bold">{{item.name}}</p>
+    </div>
+    <div class="col d-flex align-items-center justify-content-center">
+        <button class="btn" (click)="onRemoveQuantity(item)">
+            -
+        </button>
+        <p class="fs-4 text">
+            {{item.quantity}}
+        </p>
+        <button class="btn" (click)="onAddQuantity(item)">
+            +
+        </button>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center flex-column">
+        <p>{{item.price * item.quantity | currency}}</p>
+        <button class="btn btn-secondary" (click)="onDeleteProduct(item)">Delete</button>
+    </div>
+</div>

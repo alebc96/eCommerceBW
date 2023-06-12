@@ -1,0 +1,117 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "adam@gmail.com",
+      "password": "adam.123s",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "email": "eva@gmail.com",
+      "password": "eva.123s",
+      "role": "CUSTOMER"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "product 1",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam turpis non ex semper, eget iaculis nisl interdum. Suspendisse ultrices mi ac leo venenatis, nec gravida risus vestibulum. Integer eu scelerisque nulla.",
+      "category": "man",
+      "price": 100,
+      "size": "XL",
+      "promotion": 10,
+      "quantity": 0,
+      "image": "https://oniclothing.com/wp-content/uploads/2022/03/sudadera_hanya.jpg"
+    },
+    {
+      "id": 2,
+      "name": "product 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam turpis non ex semper, eget iaculis nisl interdum. Suspendisse ultrices mi ac leo venenatis, nec gravida risus vestibulum. Integer eu scelerisque nulla.",
+      "category": "man",
+      "price": 100,
+      "size": "XL",
+      "promotion": 10,
+      "quantity": 0,
+      "image": "https://oniclothing.com/wp-content/uploads/2022/03/sudadera_hanya.jpg"
+    },
+    {
+      "id": 3,
+      "name": "product 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam turpis non ex semper, eget iaculis nisl interdum. Suspendisse ultrices mi ac leo venenatis, nec gravida risus vestibulum. Integer eu scelerisque nulla.",
+      "category": "man",
+      "price": 100,
+      "size": "XL",
+      "promotion": 10,
+      "quantity": 0,
+      "image": "https://oniclothing.com/wp-content/uploads/2022/03/sudadera_hanya.jpg"
+    },
+    {
+      "id": 4,
+      "name": "product 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam turpis non ex semper, eget iaculis nisl interdum. Suspendisse ultrices mi ac leo venenatis, nec gravida risus vestibulum. Integer eu scelerisque nulla.",
+      "category": "man",
+      "price": 100,
+      "size": "XL",
+      "promotion": 10,
+      "quantity": 0,
+      "image": "https://oniclothing.com/wp-content/uploads/2022/03/sudadera_hanya.jpg"
+    },
+    {
+      "id": 5,
+      "name": "product 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam turpis non ex semper, eget iaculis nisl interdum. Suspendisse ultrices mi ac leo venenatis, nec gravida risus vestibulum. Integer eu scelerisque nulla.",
+      "category": "man",
+      "price": 100,
+      "size": "XL",
+      "promotion": 10,
+      "quantity": 0,
+      "image": "https://ih1.redbubble.net/image.1548706127.2819/ssrco,classic_tee,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000.jpg"
+    },
+    {
+      "id": 6,
+      "name": "product 2",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed aliquam turpis non ex semper, eget iaculis nisl interdum. Suspendisse ultrices mi ac leo venenatis, nec gravida risus vestibulum. Integer eu scelerisque nulla.",
+      "category": "man",
+      "price": 100,
+      "size": "XL",
+      "promotion": 10,
+      "quantity": 0,
+      "image": "https://cdn.sarenza.cloud/_img/productsv4/0000295975/0000295975_539821_09_504x690.jpg?202203221642&v=20230608160055"
+    },
+    {
+      "name": "poke t-shirt",
+      "description": "esta es una poke camiseta bla bla bla esto es uan description",
+      "category": "camiseta",
+      "price": 22,
+      "size": "XS",
+      "promotion": 0,
+      "quantity": 0,
+      "image": "https://oniclothing.com/wp-content/uploads/2021/08/OnicraciaNegraBack.jpg",
+      "id": 7
+    },
+    {
+      "name": "random camiseta",
+      "description": "esta es una camiseta del pokemon que sale de la tierra como un topo ",
+      "category": "camiseta",
+      "price": 25,
+      "size": "XS",
+      "promotion": 0,
+      "quantity": 0,
+      "image": "https://oniclothing.com/wp-content/uploads/2021/08/OnicraciaNegraBack.jpg",
+      "id": 8
+    },
+    {
+      "name": " mnmn",
+      "description": "nbasnmdbmn",
+      "category": "asmndbasmn",
+      "price": 100,
+      "size": "XS",
+      "promotion": 0,
+      "quantity": 0,
+      "image": "https://m.media-amazon.com/images/I/A13usaonutL._CLa%7C2140%2C2000%7C915jrs1XADL.png%7C0%2C0%2C2140%2C2000%2B0.0%2C0.0%2C2140.0%2C2000.0_AC_UL1500_.png",
+      "id": 9
+    }
+  ]
+}

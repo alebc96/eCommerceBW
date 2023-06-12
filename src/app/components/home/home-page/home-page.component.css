@@ -1,0 +1,21 @@
+.carousel-height {
+    height: 80vh;
+    overflow: hidden;
+}
+  
+.carousel-height .carousel-item img {
+    max-height: 100%;
+    width: auto;
+}
+
+.input-search:focus{
+    border: none;
+    border-bottom: 1px solid gray;
+
+}
+
+.input-search{
+    border: none;
+    font-size: 22px;
+    outline: none;
+}

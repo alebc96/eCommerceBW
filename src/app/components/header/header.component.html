@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary p-4">
+  <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/home">theECommerce</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarScroll">
+          <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+              <!--Poner los links aqui-->
+              <li>
+                <a class="link-offset-2 link-underline link-underline-opacity-0" routerLink="create-product">Create Product</a>
+              </li>
+          </ul>
+      </div>
+      <div class="dropdown">
+          <button class="btn rounded cart-button" (click)="onShowCart()">  
+              <i class="bi bi-bag fs-3 text">
+                <span class=" fs-6 position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                  {{getTotalItems(cart)}}
+                </span> 
+              </i> 
+          </button>
+          <ul class="dropdown-menu-custom" [ngClass]="{'oculto': !showCart, 'slide-left': showCart}">
+              <div class="w-100 d-flex flex-row-reverse">
+                  <button type="button" class="btn-close m-4" aria-label="Close" (click)="onCloseCart()"></button>
+              </div>
+              <div *ngFor="let item of cart">
+                  <app-cart-item [item]="item"></app-cart-item>
+                  <hr/>
+              </div>
+              <div class="row text-center w-100">
+                <h5>Total: {{ onGetTotal(cart) | currency}}</h5>
+              </div>
+              <div class=" w-100 row p-3 " *ngIf="!(cart?.length === 0)">
+                <div class="col text-center">
+                  <button class="btn btn-dark w-100" (click)="moveToCart()">Payment</button>
+                </div>
+                <div class="col text-center">
+                  <button class="btn btn-dark w-100" (click)="onDeleteAll()">Delete all</button>
+                </div>
+              </div>
+              <div class="container w-100 h" *ngIf="(cart?.length === 0)">
+                <button class="btn btn-dark w-100" routerLink="home" (click)="onCloseCart()">Go Shopping</button>
+              </div>
+          </ul>
+      </div>
+  </div>
+</nav>

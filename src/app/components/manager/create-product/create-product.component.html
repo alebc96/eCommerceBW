@@ -1,0 +1,41 @@
+<br>
+<br>
+<br>
+<div class="row w-100 p-5">
+    <div class="col col-ms-6">
+        <form class="container mt-5" [formGroup]="formProduct" (ngSubmit)="onSubmitProduct()">
+            <h2>Create new Product</h2>
+            <div class="form-floating mb-3 mt-3">
+                <input type="text" class="form-control" id="name" placeholder="Product name" formControlName="name">
+                <label for="name">Product name</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="description" placeholder="Product description" formControlName="description">
+                <label for="description">Product description</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="category" placeholder="Product category" formControlName="category">
+                <label for="category">Product category</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="image" placeholder="Product image url" formControlName="image">
+                <label for="image">Product image URL</label>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="price" placeholder="Product price" formControlName="price">
+                <label for="price">Product price</label>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button type="submit" class="btn btn-dark fs-4 w-100" [disabled]="formProduct.invalid"> Submit </button>
+                </div>
+                <div class="col">
+                    <button type="button" class="btn btn-secondary fs-4 w-100" routerLink="home"> Back </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-6 d-flex justify-content-center align-items-center">
+        <img class="image-product-create"  [src]="formProduct.value.image || 'https://via.placeholder.com/500'" alt="product iamge">
+    </div>
+</div>

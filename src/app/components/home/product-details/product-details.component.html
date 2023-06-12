@@ -1,0 +1,40 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="container p-3 w-100" *ngIf="product !== undefined">
+    <div class="row">
+        <div class="col d-flex justify-content-center align-items-center">
+            <img class="image-details" [src]="product.image" alt="" width="300px" height="300px">
+        </div>
+        <div class="col">
+            <h1 class="mb-4">{{product.name}}</h1>
+            <p class="lh-lg fs-5">{{product.description}}</p>
+            <h3 class="lh-lg fs-4 mb-3">Price: {{product.price | currency}}</h3>
+            <div class="row">
+                <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                    <option selected>Select Size</option>
+                    <option value="XS">XS</option>
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                    <option value="L">L</option>
+                    <option value="XL">XL</option>
+                    <option value="XXL">XXL</option>
+                </select>
+            </div>
+            <div class="row mt-4">
+                <button [disabled]="(product.quantity <= 0)" class="fs-4 col btn btn-dark" type="button" (click)="onRemoveProduct(product)">-</button>
+                <h2 class="fs-4 col text-center">{{product.quantity}}</h2>
+                <button class="fs-4 col btn btn-dark" type="button" (click)="onAddProduct(product)">+</button>
+            </div>
+            <div class="row mt-4">
+                <button [disabled]="!(product.quantity > 0)" class="btn fs-4 btn-dark" routerLink="/cart">Checkout</button>
+            </div>
+            <div class="row mt-2">
+                <button class="btn fs-4 btn-secondary" routerLink="/home">Back</button>
+            </div>
+        </div>
+    </div>
+</div>

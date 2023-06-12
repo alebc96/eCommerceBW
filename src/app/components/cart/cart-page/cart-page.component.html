@@ -1,0 +1,26 @@
+<div class="container-cart w-100 mb-5">
+    <div class="container">
+        <h2>Checkout</h2>
+        <hr>
+    </div>
+    <div class="container" *ngFor="let item of cart">
+        <app-cart-item [item]="item"></app-cart-item>
+        <hr>
+    </div>
+    <div class="row text-center w-100 mt-5">
+        <h5>Total: {{ onGetTotal(cart) | currency}}</h5>
+    </div>
+    <div class="container">
+        <div class=" w-100 row p-3 " *ngIf="!(cart?.length === 0)">
+            <div class="col text-center">
+              <button class="btn btn-dark w-100" >Checkout</button>
+            </div>
+            <div class="col text-center">
+              <button type="button" class="btn btn-dark w-100" (click)="clearCart()">Clear cart</button>
+            </div>
+          </div>
+          <div class="container w-100 h" *ngIf="(cart?.length === 0)">
+            <button class="btn btn-dark w-100" routerLink="home">Go Shopping</button>
+          </div>
+    </div>
+</div>

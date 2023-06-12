@@ -1,0 +1,11 @@
+.form-control{
+    border: 1px solid #212529;
+    border-radius: 0;
+    padding: 5px;
+}
+
+.image-product-create{
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+}

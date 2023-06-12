@@ -1,0 +1,14 @@
+<div class="card border border-light" style="width: 18rem;">
+    <div class="image-container">
+        <img [src]="product?.image" class="card-img-top" alt="..." width="200px" height="250px">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">{{product?.name}}</h5>
+        <h5 class="card-title">{{product?.price | currency}}</h5>
+      <p class="card-text"></p>
+      <div class="row">
+          <button class="col btn btn-dark m-1" *ngIf="product !== undefined" (click)="onAddToCart(product)">Add to cart</button>
+          <button class="col btn btn-secondary m-1" *ngIf="product !== undefined" (click)="moveToDetails(product.id)">View Details</button>
+      </div>
+    </div>
+</div>

@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-toastr/toastr';
+
+.btn-dark{
+    border-radius: 0px;
+    border: 2px solid #212529;
+    transition: 0.3s ease-out;
+}
+
+.btn-secondary{
+    border-radius: 0px;
+    border: 2px solid #212529;
+    transition: 0.3s ease-out;
+    color: #212529;
+    background-color: transparent;
+}
+
+.btn-secondary:hover{
+    border-radius: 0px;
+    border: 2px solid #212529;
+    background-color: #212529;
+    color: #fff;
+}
+
+.btn-dark:hover{
+    border-radius: 0px;
+    border: 2px solid #212529;
+    background-color: #fff;
+    color: #212529;
+}
+
+.card{
+    border-radius: 0px;
+}
+
+.app-container{
+    min-height: 100vh;
+}

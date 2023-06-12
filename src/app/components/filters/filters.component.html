@@ -1,0 +1,32 @@
+<div class="container mb-3 mt-3">
+    <div class="row">
+        <div class="col">
+            <select [(ngModel)] = "categorySelected" class="form-select" aria-label="Default select example" (click)="onSelectCategory(categorySelected)">
+                <option selected value="all">All</option>
+                <option value="t-shirt">T-shirt</option>
+                <option value="hoodie">Hoodie</option>
+            </select>
+        </div>
+    </div>
+    <div class="contianer">
+        <form [formGroup]="formSearch" (ngSubmit)="onSearchByPrice()">
+            <div class="row">
+                <!--Low price-->
+                <div class="col">
+                    <label for="lowPrice" class="col-form-label">Low price</label>
+                    <input formControlName="lowPrice" (input)="onSelectLowPrice($event)" type="number" id="lowPrice" class="form-control" aria-labelledby="passwordHelpInline"/>
+                </div>
+                <!--Hight price-->
+                <div class="col">
+                    <label for="hightPrice" class="col-form-label">Hight price</label>
+                    <input formControlName="hightPrice" (input)="onSelectHightPrice($event)" type="number" id="hightPrice" class="form-control" aria-labelledby="passwordHelpInline"/>
+                </div>
+                <div class=" d-flex justify-content-around mt-3">
+                    <button type="submit" class="btn btn-dark w-50">Search by price</button>
+                    <button type="button" class="btn btn-secondary w-50" (click)="onRestoreSearch()">Restart search</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
