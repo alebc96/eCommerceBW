@@ -1,4 +1,4 @@
 export const environment = {
     production: true,
-    baseUrl: "http://localhost:8080/products"
+    baseUrl: "https://api-test-825o.onrender.com"
   };
