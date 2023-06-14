@@ -5,6 +5,9 @@ import { CartPageComponent } from './components/cart/cart-page/cart-page.compone
 import { ProductDetailsComponent } from './components/home/product-details/product-details.component';
 import { ProductsListComponent } from './components/home/products/products-list/products-list.component';
 import { CreateProductComponent } from './components/manager/create-product/create-product.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { LoginComponent } from './components/auth/login/login.component';
 
 const routes: Routes = [
   {
@@ -14,6 +17,14 @@ const routes: Routes = [
   {
     path: "create-product",
     component: CreateProductComponent
+  },
+  {
+    path: "register",
+    component: RegisterComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
   },
   {
     path: "products",

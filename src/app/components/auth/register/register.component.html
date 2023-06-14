@@ -1,0 +1,30 @@
+<br>
+<div class="container-register container d-flex justify-content-center align-items-center">
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3 text-center">
+            <h2>Register</h2>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp">
+        </div>
+        <div class="mb-3">
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="role">
+                <option value="ADMIN">ADMIN</option>
+                <option value="CUSTOMER">CUSTOMER</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" formControlName="password"  aria-describedby="password">
+        </div>
+        <div class="mb-3">
+            <label for="repeatPassword" class="form-label">Repeat password</label>
+            <input type="password" class="form-control" id="repeatPassword" aria-describedby="password" formControlName="repeatPassword">
+        </div>
+        <div class="w-100">
+            <button type="submit" class="btn btn-dark w-100 mb-2" [disabled]="registerForm.invalid">Sign up</button>
+            <p class="w-100 mt-2 text-center">Already have an account? <a type="button" class="w-100 text-center" routerLink="/login">Log in here</a></p> 
+        </div>
+    </form>
+</div>

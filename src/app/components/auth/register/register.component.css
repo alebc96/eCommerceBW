@@ -1,0 +1,17 @@
+.container-register{
+    height: 100vh;
+}
+
+.form-select{
+    border: 1px solid #212529;
+    border-radius: 0;
+    padding: 5px;
+    width: 300px; 
+}
+
+.form-control{
+    border: 1px solid #212529;
+    border-radius: 0;
+    padding: 5px;
+    width: 300px;
+}

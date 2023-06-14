@@ -19,6 +19,11 @@ import { ProductDetailsComponent } from './components/home/product-details/produ
 import { CreateProductComponent } from './components/manager/create-product/create-product.component';
 import { ProductsTableComponent } from './components/manager/products-table/products-table.component';
 import { FiltersComponent } from './components/filters/filters.component';
+import { LoginComponent } from './components/auth/login/login.component';
+import { RegisterComponent } from './components/auth/register/register.component';
+import { AngularFireModule } from '@angular/fire/compat'
+import { environment } from 'src/environments/environments';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 
 @NgModule({
@@ -35,6 +40,9 @@ import { FiltersComponent } from './components/filters/filters.component';
     CreateProductComponent,
     ProductsTableComponent,
     FiltersComponent,
+    LoginComponent,
+    RegisterComponent,
+    SpinnerComponent,
 
   ],
   imports: [
@@ -44,7 +52,8 @@ import { FiltersComponent } from './components/filters/filters.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    AngularFireModule.initializeApp(environment.firebaseConfig) // configuracion de firebase
   ],
   providers: [],
   bootstrap: [AppComponent]
