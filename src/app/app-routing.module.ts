@@ -8,6 +8,7 @@ import { CreateProductComponent } from './components/manager/create-product/crea
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { actorRoleGuard } from './guards/actor-role.guard';
 
 const routes: Routes = [
   {
@@ -16,7 +17,8 @@ const routes: Routes = [
   },
   {
     path: "create-product",
-    component: CreateProductComponent
+    component: CreateProductComponent,
+    canActivate: [actorRoleGuard], data: {expectedRole: 'ADMIN'}
   },
   {
     path: "register",
