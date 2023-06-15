@@ -1,7 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { UserForm, UserInfo } from '../interfaces/User';
-import { Observable } from 'rxjs'
+import { BehaviorSubject, Observable } from 'rxjs'
 import { environment } from 'src/environments/environments';
 
 
@@ -15,6 +15,8 @@ const httpOptions = {
 })
 export class UserService {
 
+  public logged = new BehaviorSubject<boolean>( false )
+
   constructor(private http: HttpClient) { }
 
   postUser(user: UserForm): Observable<UserInfo>{
@@ -22,12 +24,12 @@ export class UserService {
     return this.http.post<UserInfo>(url, user, httpOptions)
   }
 
-  saveSession(user: any){
+  saveSession(user: UserInfo){
     const userString = JSON.stringify(user)
     sessionStorage.setItem('user', userString)
   }
 
-  getSession(): any{
+  getSession(): UserInfo | undefined{
     const user = sessionStorage.getItem('user')
     if(!user){
       return undefined
@@ -36,7 +38,39 @@ export class UserService {
     }
   }
 
+  isLogged(): boolean{
+    const user = sessionStorage.getItem('user')
+    if(!user){
+      return false
+    }else{
+      return true
+    }
+  }
+
   clearSession(): void{
     sessionStorage.clear()
   }
+
+  userRegister(email: string){
+    let users: UserInfo[]
+    let user: any
+    this.getAllUsers().subscribe({
+      next: (_users) =>{
+        user = _users.filter(user => {
+          return user.email === email
+        })
+      }
+    })
+  }
+
+  getAllUsers(): Observable<UserInfo[]>{
+    const url = `${environment.BASE_URL}/users`
+    return this.http.get<UserInfo[]>(url)
+  }
+
+  getStatus(): Observable<boolean>{
+    return this.logged
+  }
+
+
 }

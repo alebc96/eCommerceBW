@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { UserInfo } from 'src/app/interfaces/User';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -29,17 +30,31 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   onLogin() {
-    console.log(this.loginForm.value)
+    console.log(this.loginForm.value);
     const { email, password } = this.loginForm.value;
-
+    let user: UserInfo[];
     //hacer login con firebase
 
     this.afAuth
       .signInWithEmailAndPassword(email, password)
-      .then( (res: any) => {
-        let { accessToken, email} = res?.user?._delegate
-        console.log({email}, {accessToken})
-        console.log(res)
+      .then((res: any) => {
+        let { accessToken, email } = res?.user?._delegate;
+        console.log({ email }, { accessToken });
+        console.log(res);
+        this.userService
+          .getAllUsers()
+          .subscribe({
+            next: _users => {
+              user = _users.filter( user => {
+                return user.email === email
+              })
+              this.userService.saveSession(user[0])
+              this.userService.logged.next(true)
+            },
+            error: error => {
+              console.log(error)
+            }
+          });
         this.router.navigate(['/home'])
       })
       .catch((error) => {
