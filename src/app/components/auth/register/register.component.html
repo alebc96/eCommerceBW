@@ -1,6 +1,7 @@
 <br>
+<br>
 <div class="container-register container d-flex justify-content-center align-items-center">
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <form class="form-container" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
         <div class="mb-3 text-center">
             <h2>Register</h2>
         </div>
@@ -9,7 +10,9 @@
             <input type="email" class="form-control" id="exampleInputEmail1" formControlName="email" aria-describedby="emailHelp">
         </div>
         <div class="mb-3">
-            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="role">
+
+            <label for="role" class="form-label">Role</label>
+            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example" formControlName="role" id="role">
                 <option value="ADMIN">ADMIN</option>
                 <option value="CUSTOMER">CUSTOMER</option>
             </select>

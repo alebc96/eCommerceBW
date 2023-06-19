@@ -35,7 +35,7 @@ export class CreateProductComponent implements OnInit {
     const productForm: ProductForm = this.formProduct.value
     this.storeService.postProduct(productForm).subscribe({
       next: _response => {
-        this.toast.success('Product created successfuly', 'Ok', {timeOut: 1000, positionClass: 'toast-top-left'})
+        this.toast.success('Product created successfuly', 'Ok', {timeOut: 1000, positionClass: 'toast-bottom-left'})
         this.formProduct = this.fb.group({
           name: ['', Validators.required],
           description: ['', Validators.required],

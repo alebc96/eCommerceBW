@@ -16,8 +16,8 @@
               <li class="m-2" *ngIf="!onLogged()">
                 <a class="link-offset-2 link-underline link-underline-opacity-0" routerLink="/register">Sign up</a>
               </li>
-              <li class="m-2" *ngIf="onLogged()">
-                <button class="btn btn-secondary" (click)="logout()">Logout</button>
+              <li *ngIf="onLogged()">
+                <button class="btn btn-secondary ms-4" (click)="logout()">Logout</button>
               </li>
           </ul>
       </div>

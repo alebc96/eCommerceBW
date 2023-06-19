@@ -15,7 +15,7 @@ export const actorRoleGuard:
   | Promise<boolean | UrlTree>
   | boolean
   | UrlTree
-  | undefined = (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+  | undefined = (route: ActivatedRouteSnapshot, _state: RouterStateSnapshot) => {
   const userService = inject(UserService);
   const router = inject(Router);
   const expectedRole = route?.data['expectedRole'];

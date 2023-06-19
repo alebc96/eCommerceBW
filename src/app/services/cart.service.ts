@@ -22,7 +22,7 @@ export class CartService {
     }else{
       itemFinded.quantity += 1
     }
-    this.toast.success("Item added to cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-top-left'})
+    this.toast.success("Item added to cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-bottom-left'})
     this.cart.next(products)
   }
 
@@ -34,7 +34,7 @@ export class CartService {
           this.clearCartItem(_item)
         }else{
           _item.quantity -= 1
-          this.toast.warning("Item remove from cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-top-left'})
+          this.toast.warning("Item remove from cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-bottom-left'})
         }
       }
     })
@@ -42,7 +42,7 @@ export class CartService {
 
   clearCart(): void{
     this.cart.next([])
-    this.toast.warning("Item remove from cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-top-left'})
+    this.toast.warning("Item remove from cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-bottom-left'})
   }
 
   clearCartItem(item: Product): void {
@@ -50,7 +50,7 @@ export class CartService {
       return _item.id !== item.id
     })
     this.cart.next(filteredProducts)
-    this.toast.warning("Item remove from cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-top-left'})
+    this.toast.warning("Item remove from cart", "Ok :)", {timeOut: 1000, positionClass: 'toast-bottom-left'})
   }
 
   getTotalPayment(items: Product[]): number{

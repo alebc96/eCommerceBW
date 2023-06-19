@@ -84,6 +84,7 @@ export class HeaderComponent implements OnInit {
     this.userService.clearSession()
     this.router.navigate(['/home'])
     this.isLogged = false
+    this.cartService.clearCart()
     this.userService.logged.next(false)
   }
 }
