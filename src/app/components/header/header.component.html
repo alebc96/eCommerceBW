@@ -24,7 +24,7 @@
       <div class="dropdown">
           <button class="btn rounded cart-button" (click)="onShowCart()">  
               <i class="bi bi-bag fs-3 text">
-                <span class=" fs-6 position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                <span class=" fs-6 position-absolute top-0 start-100 translate-middle badge rounded-pill bg-yellow" *ngIf="getTotalItems(cart) !== 0">
                   {{getTotalItems(cart)}}
                 </span> 
               </i> 

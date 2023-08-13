@@ -1,30 +1,8 @@
-<div id="carouselExampleCaptions" class="carousel-height carousel slide">
-    <div class="carousel-indicators">
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-    </div>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="../../../../assets/one-3054268_1280.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../../../assets/one-3054268_1280.jpg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="../../../../assets/one-3054268_1280.jpg" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div class="banner-img">
+  <img src="../../../../assets/one-3054268_1280.jpg" alt="...">
+  <h1>Shop Smart, Save Big!</h1>
 </div>
-<div class="container mt-4">
+<div class="home-container container mt-4">
   <div class="row d-flex justify-content-center">
     <h2 class="col-2 col-lg m-3">Store</h2>
     <input class="col-12 col-lg-10 input-search" type="text" placeholder="Search a product..." (input)="searchProduct($event)" [ngStyle]="{'border': 'none'}">
@@ -37,7 +15,7 @@
     </div>
     <hr>
   </div>
-  <div class="d-flex flex-wrap">
+  <div class="products-container">
     <div *ngFor="let product of products" class="d-flex">
       <app-product-card (addToCart)="onAddToCart($event)" class="m-3" [product]="product"></app-product-card>
     </div>
